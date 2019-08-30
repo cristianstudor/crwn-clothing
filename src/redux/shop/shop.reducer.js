@@ -4,9 +4,9 @@ const INITIAL_STATE = {
   collections: SHOP_DATA
 };
 
-const shopReducer = (state=INITIAL_STATE, action) => {
+const shopReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    default: 
+    default:
       return state;
   }
 };

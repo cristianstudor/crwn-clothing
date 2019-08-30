@@ -1,13 +1,13 @@
 import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 
-const StripeCheckoutButton = ({price}) => {
+const StripeCheckoutButton = ({ price }) => {
   const priceForStripe = price * 100;
   const publishableKey = 'pk_test_3alQTyNwpYtkqF7o8f8tHbC1005BytDFtU';
 
   const onToken = token => {
     console.log(token);
-    alert('Payment Successful');
+    alert('Payment Succesful!');
   };
 
   return (
