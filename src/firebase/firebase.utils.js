@@ -34,7 +34,7 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
     } catch (error) {
       console.log('error creating user', error.message);
     }
-  }
+  };
 
   return userRef;
 };
@@ -60,7 +60,7 @@ export const convertCollectionsSnapshotToMap = (collections) => {
       id: doc.id,
       title,
       items
-    }
+    };
   });
 
   return transformedCollection.reduce((accumulator, collection) => {
