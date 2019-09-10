@@ -22,10 +22,6 @@
     }
   }
 
-  &.large {
-    height: 380px;
-  }
-
   &:first-child {
     margin-right: 7.5px;
   }
@@ -33,6 +29,18 @@
   &:last-child {
     margin-left: 7.5px;
   }
+
+  &.large {
+    height: 380px;
+
+    @media screen and (max-width: 800px) {
+      height: 200px;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    height: 200px;
+  };
 
   .background-image {
     width: 100%;
