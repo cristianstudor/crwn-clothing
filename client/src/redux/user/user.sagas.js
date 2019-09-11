@@ -18,7 +18,7 @@ import {
 
 import { UserActionTypes } from './user.types';
 
-export function* getSnapshotFromUserAuth(userAuth, additionalData) {
+function* getSnapshotFromUserAuth(userAuth, additionalData) {
   try {
     const userRef = yield call(createUserProfileDocument, userAuth, additionalData);
     const userSnapshot = yield userRef.get();
@@ -67,12 +67,13 @@ export function* signOut() {
 
 export function* signUp({payload: { displayName, email, password }}) {
   try {
+    const cartItems = []; 
     const { user } = yield auth.createUserWithEmailAndPassword(
       email,
       password
     );
     
-    const userCredentials = {user, additionalData: {displayName} };
+    const userCredentials = {user, additionalData: {displayName, cartItems} };
     yield put(signUpSuccess(userCredentials));
   } catch(error) {
     yield put(signUpFailure(error));

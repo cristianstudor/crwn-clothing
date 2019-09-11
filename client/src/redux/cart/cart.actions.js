@@ -14,11 +14,21 @@ export const removeItem = item => ({
   payload: item
 });
 
-export const clearItemFromCart = item => ({
-  type: CartActionTypes.CLEAR_ITEM_FROM_CART,
+export const clearItem = item => ({
+  type: CartActionTypes.CLEAR_ITEM,
   payload: item
 });
 
 export const clearCart = () => ({
   type: CartActionTypes.CLEAR_CART
+});
+
+export const fetchCartItemsSucces = cartItems => ({
+  type: CartActionTypes.FETCH_CART_ITEMS_SUCCESS,
+  payload: cartItems
+});
+
+export const fetchCartItemsFailure = error => ({
+  type: CartActionTypes.FETCH_CART_ITEMS_SUCCESS,
+  payload: error
 });
